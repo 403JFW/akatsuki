@@ -14,8 +14,8 @@ def load_bibtex_file(filepath):
         bp = BibTexParser(bibfile)
         entries = bp.get_entry_list()
 
-    entries = map(_capitalize_entry_title, entries)
-    entries = map(_format_entry_authors, entries)
+    entries = list(map(_capitalize_entry_title, entries))
+    entries = list(map(_format_entry_authors, entries))
     return entries
 
 
@@ -33,7 +33,7 @@ def _format_entry_authors(entry):
     if 'author' not in entry:
         return entry
     authors = entry['author'].split(' and ')
-    authors = map(_format_entry_author, authors)
+    authors = list(map(_format_entry_author, authors))
     last_author = authors[-1]
     authors.pop()
     text = ', '.join(authors)

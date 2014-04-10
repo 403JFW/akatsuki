@@ -15,3 +15,9 @@ class TestParser(unittest.TestCase):
         entry = parser._capitalize_entry_title(entry)
 
         self.assertEqual(entry['title'], capitalized_title)
+
+    def test_format_entry_authors(self):
+        entry = {'author': 'Tanaka, A. and Suzuki, K. and Fujiwara, S'}
+        formatted_author = 'Tanaka, A, Suzuki, K and Fujiwara, S'
+        entry = parser._format_entry_authors(entry)
+        self.assertEqual(entry['author'], formatted_author)

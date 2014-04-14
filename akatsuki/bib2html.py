@@ -11,5 +11,5 @@ from akatsuki.utils import sort_by_date
 def main(bibtex_file, html_file):
     """Load BibTeX file and export to HTML file"""
     entries = load_bibtex_file(bibtex_file)
-    entries = sort_by_date(entries)
+    entries = sort_by_date(entries, reverse=True)
     export_html(html_file, entries)

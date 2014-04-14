@@ -2,8 +2,11 @@
 # -*- coding: utf-8 -*-
 
 from __future__ import unicode_literals
+try:
+    from future_builtins import zip
+except ImportError:
+    pass
 
-from future_builtins import zip
 import unittest
 
 from akatsuki import utils

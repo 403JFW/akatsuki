@@ -24,7 +24,11 @@ def export_html(filepath, entries):
     # Write HTML header lines
     html.write(HTML_HEADER)
 
+    year = 0
     for entry in entries:
+        if year != int(entry['year']):
+            year = int(entry['year'])
+            html.write('<h2>%d</h2>\n' % year)
         html.write('<p>\n')
         html.write(_entry_html(entry))
         html.write('</p>\n')

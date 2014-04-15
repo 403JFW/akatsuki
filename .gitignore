@@ -2,3 +2,5 @@
 .coverage
 *.pyc
 *.swp
+akatsuki.egg-info
+dist

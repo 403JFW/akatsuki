@@ -7,7 +7,7 @@ except:
 
 
 setup(name='akatsuki',
-      version='0.1',
+      version='0.1.1',
       description='BibTeX to HTML converter',
       author='Yusuke Miyazaki',
       author_email='miyazaki.dev@gmail.com',
@@ -15,7 +15,7 @@ setup(name='akatsuki',
       packages=['akatsuki'],
       scripts=['scripts/bib2html'],
       test_suite='tests',
-      install_requires=['bibtexparser>=0.5.2'],
+      install_requires=['bibtexparser==0.5.2'],
       classifiers=[
           'Development Status :: 3 - Alpha',
           'Environment :: Console',
@@ -30,6 +30,7 @@ setup(name='akatsuki',
           'Programming Language :: Python :: 3',
           'Programming Language :: Python :: 3.2',
           'Programming Language :: Python :: 3.3',
+          'Programming Language :: Python :: 3.4',
           'Programming Language :: Python :: Implementation :: PyPy',
           'Topic :: Utilities'
       ])

@@ -55,4 +55,6 @@ def _entry_html(entry):
         if 'pages' in entry:
             result += ':%s' % entry['pages']
         result += '.<br>\n'
+    if 'URL' in entry:
+        result += '<a href="{0:s}">{0:s}</a><br>\n'.format(entry['URL'])
     return result

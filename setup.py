@@ -15,7 +15,7 @@ setup(name='akatsuki',
       packages=['akatsuki'],
       scripts=['scripts/bib2html'],
       test_suite='tests',
-      install_requires=['bibtexparser>=0.5.2'],
+      install_requires=['bibtexparser==0.5.2'],
       classifiers=[
           'Development Status :: 3 - Alpha',
           'Environment :: Console',

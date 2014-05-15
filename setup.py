@@ -7,7 +7,7 @@ except:
 
 
 setup(name='akatsuki',
-      version='0.1',
+      version='0.1.1',
       description='BibTeX to HTML converter',
       author='Yusuke Miyazaki',
       author_email='miyazaki.dev@gmail.com',

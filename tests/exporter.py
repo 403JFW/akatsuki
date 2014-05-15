@@ -23,7 +23,8 @@ class TestExporter(unittest.TestCase):
             'year': '2014',
             'id': 'ku2014',
             'type': 'article',
-            'pages': '121--123'}
+            'pages': '121--123',
+            'URL': 'http://www.google.com/'}
         entry_text = "%s<br>\n" % entry_dict['author']
         entry_text += "%s<br>\n" % entry_dict['title']
         entry_text += "%s %s %s;%s(%s):%s.<br>\n" % (
@@ -33,4 +34,7 @@ class TestExporter(unittest.TestCase):
             entry_dict['volume'],
             entry_dict['number'],
             entry_dict['pages'])
+        if 'URL' in entry_dict:
+            link_text = '<a href="{0:s}">{0:s}</a><br>\n'
+            entry_text += link_text.format(entry_dict['URL'])
         self.assertEqual(entry_text, exporter._entry_html(entry_dict))

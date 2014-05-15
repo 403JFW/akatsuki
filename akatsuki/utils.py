@@ -19,6 +19,8 @@ MONTH_DICT = {
     'DEC': 12
 }
 
+PUBMED_URL = 'http://www.ncbi.nlm.nih.gov/pubmed/'
+
 
 def sort_by_date(entries, reverse=False):
     """Sort entries by year and month of the entry"""
@@ -35,3 +37,12 @@ def sort_by_date(entries, reverse=False):
     return sorted(entries,
                   key=lambda e: int(e['year']) * 100 + int(e['month_n']),
                   reverse=reverse)
+
+
+def pmid_to_url(entries):
+    """Set URL field from pmid"""
+    for entry in entries:
+        pmid = entry['id'].strip()
+        if (pmid[0:4] == 'pmid') and ('URL' not in entry):
+            entry['URL'] = PUBMED_URL + pmid[4:]
+    return entries

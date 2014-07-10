@@ -13,7 +13,7 @@ setup(name='akatsuki',
       author_email='miyazaki.dev@gmail.com',
       url='https://github.com/403JFW/akatsuki',
       packages=['akatsuki'],
-      scripts=['scripts/bib2html'],
+      scripts=['scripts/bib2html', 'scripts/bib2wp'],
       test_suite='tests',
       install_requires=['bibtexparser==0.5.2'],
       classifiers=[

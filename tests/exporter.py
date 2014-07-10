@@ -38,3 +38,33 @@ class TestExporter(unittest.TestCase):
             link_text = '<a href="{0:s}">{0:s}</a><br>\n'
             entry_text += link_text.format(entry_dict['URL'])
         self.assertEqual(entry_text, exporter._entry_html(entry_dict))
+
+    def test_entry_wordpress(self):
+        entry_dict = {
+            'keyword': 'keyword1, keyword2',
+            'title': 'An amazing title',
+            'journal': 'KU Journal',
+            'author': 'John Appleseed',
+            'abstract': 'This is an abstract.',
+            'month': 'Jan',
+            'volume': '12',
+            'number': '32',
+            'comments': 'A comment',
+            'year': '2014',
+            'id': 'ku2014',
+            'type': 'article',
+            'pages': '121--123',
+            'URL': 'http://www.google.com/'}
+        entry_text = "%s\n" % entry_dict['author']
+        entry_text += "%s\n" % entry_dict['title']
+        entry_text += "%s %s %s;%s(%s):%s.\n" % (
+            entry_dict['journal'],
+            entry_dict['year'],
+            entry_dict['month'],
+            entry_dict['volume'],
+            entry_dict['number'],
+            entry_dict['pages'])
+        if 'URL' in entry_dict:
+            link_text = '<a href="{0:s}">{0:s}</a>\n'
+            entry_text += link_text.format(entry_dict['URL'])
+        self.assertEqual(entry_text, exporter._entry_wordpress(entry_dict))

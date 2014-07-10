@@ -7,13 +7,13 @@ except:
 
 
 setup(name='akatsuki',
-      version='0.1.1',
+      version='0.2',
       description='BibTeX to HTML converter',
       author='Yusuke Miyazaki',
       author_email='miyazaki.dev@gmail.com',
       url='https://github.com/403JFW/akatsuki',
       packages=['akatsuki'],
-      scripts=['scripts/bib2html'],
+      scripts=['scripts/bib2html', 'scripts/bib2wp'],
       test_suite='tests',
       install_requires=['bibtexparser==0.5.2'],
       classifiers=[

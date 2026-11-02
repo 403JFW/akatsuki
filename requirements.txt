@@ -1,4 +1,4 @@
 bibtexparser==0.5
 pep8==1.4.6
-pylint==1.0.0
+pylint==4.0.9
 wsgiref==0.1.2
